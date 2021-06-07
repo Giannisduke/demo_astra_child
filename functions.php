@@ -35,14 +35,17 @@ add_action ('wp_enqueue_scripts', 'load_custom_files', 10 );
 
 
 
-function custom_hero_section() { ?>
+function custom_hero_section() {
+	$title = get_the_title();
+	$subtitle = get_field('subtitle');
+	?>
 	<!-- Section 2 Start -->
 	    <section class="hero">
 	        <div class="container">
 	            <div class="row justify-content-center align-items-center">
 	              <div class="col-12 text-center">
-	                <h1><?php echo get_the_title(); ?></h1>
-	                <p>Web Developer</p>
+	                <h1><?php echo $title; ?></h1>
+	                <p><?php echo $subtitle; ?></p>
 	              </div>
 	            </div>
 	        </div>
